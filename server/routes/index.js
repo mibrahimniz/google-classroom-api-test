@@ -97,7 +97,7 @@ router.get('/google/classroom/people', function(req, res) {
   function setToken(oAuth2Client, callback, res) {
     fs.readFile(TOKEN_PATH, (err, token) => {
       if(err) {
-        return res.json({message: "You are not authorized. Go to http://localhost:3000/auth/google"});
+        return res.json({message: "You are not authorized"});
       } else {
         oAuth2Client.setCredentials(JSON.parse(token));
         callback(oAuth2Client, res);
