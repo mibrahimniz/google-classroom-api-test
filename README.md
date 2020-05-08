@@ -1,27 +1,48 @@
-# GoogleClassroomApiAngular
+## GoogleClassroomApiAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
+## Localhost
 
-## Development server
+# Setting up environment
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Create a project on https://console.developers.google.com and enable google classroom api. 
+Then setup consent screen. 
+Then create credentials>OAuth client ID. Provide Javascript Origin as `http://localhost:3000` and redirect_uris as `http://localhost:3000/home`.
 
-## Code scaffolding
+After creating credentials, download credentials file and rename the file to "credentials.json" and place it into "project folder/server/config".
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Run Application
+Run `ng build`
+Run `npm start` and navigate to `http://localhost:3000`
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Deployment on other hosting domain
 
-## Running end-to-end tests
+# Setting up environment
+Create a project on https://console.developers.google.com and enable google classroom api. 
+Then setup consent screen. 
+Then create credentials>OAuth client ID. Provide Javascript Origin as `your-hosting-domain-url` and redirect_uris as `your-hosting-domain-url/home`.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+After creating credentials, download credentials file and rename the file to "credentials.json" and place it into "project folder/server/config"
 
-## Further help
+# Changes to some files
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# app.component.ts
+Change SERVER_HOST and SERVER_HOST_WS from `http://localhost:3000` to `your-hosting-domain-url`
+
+# package.json
+# scripts
+start: `node ./server/bin/www.js`
+postinstall: `ng build --aot --prod`
+
+# dependencies
+Copy following from devDependencies to dependencies
+@angular/cli
+@angular/compiler-cli
+typescript
+
+# engines
+Put following
+node: `installed version`
+npm: `installed version`
