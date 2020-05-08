@@ -28,21 +28,21 @@ After creating credentials, download credentials file and rename the file to "cr
 
 ## Changes to some files
 
-## app.component.ts
+### app.component.ts
 Change SERVER_HOST and SERVER_HOST_WS from `http://localhost:3000` to `your-hosting-domain-url`
 
-## package.json
-## scripts
+### package.json
+#### scripts
 start: `node ./server/bin/www.js`
 postinstall: `ng build --aot --prod`
 
-## dependencies
+#### dependencies
 Copy following from devDependencies to dependencies
 @angular/cli
 @angular/compiler-cli
 typescript
 
-## engines
+#### engines
 Put following
 node: `installed version`
 npm: `installed version`
