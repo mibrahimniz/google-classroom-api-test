@@ -8,7 +8,7 @@ Create a project on https://console.developers.google.com and enable google clas
 Then setup consent screen. 
 Then create credentials>OAuth client ID. Provide Javascript Origin as `http://localhost:3000` and redirect_uris as `http://localhost:3000/home`.
 
-After creating credentials, download credentials file and rename the file to "credentials.json" and place it into "project folder/server/config".
+After creating credentials, download credentials file and rename the file to `credentials.json` and place it into `project folder/server/config`.
 
 ## Run Application
 Run `ng build`
