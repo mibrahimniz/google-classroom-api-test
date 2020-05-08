@@ -1,0 +1,52 @@
+<div>
+    <h1 style="margin-top: 3%; text-align: center;"><strong> Teachers and Students in Course "{{this.courseTitle}}"</strong></h1>
+    <ngx-datatable
+        class="material ngx-datatable fixed-header datatable-body-row striped"
+        style="margin-top: 3%;"
+        [rows]="teacherRows"
+        [columnMode]="'flex'"
+        [scrollbarV]="false"
+        [headerHeight]="50"
+        [footerHeight]="50"
+        [rowHeight]="'auto'"
+        [externalPaging]="true"
+        [count]="page.totalTeachers"
+        [offset]="page.pageNumber"
+        [limit]="page.size"
+        [loadingIndicator]="isLoading"
+        (page)='setTeacherPage($event)'>
+        <ngx-datatable-column name="teacher" [flexGrow]="4">
+          <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+            <span>Teachers</span>
+          </ng-template>
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            <strong>{{value}}</strong>
+          </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
+    <ngx-datatable
+        #studentTable
+        class="material ngx-datatable fixed-header datatable-body-row striped"
+        style="margin-top: 3%;"
+        [rows]="studentRows"
+        [columnMode]="'flex'"
+        [scrollbarV]="false"
+        [headerHeight]="50"
+        [footerHeight]="50"
+        [rowHeight]="'auto'"
+        [externalPaging]="true"
+        [count]="page.totalStudents"
+        [offset]="page.pageNumber"
+        [limit]="page.size"
+        [loadingIndicator]="isLoading"
+        (page)='setStudentPage($event)'>
+        <ngx-datatable-column name="student" [flexGrow]="4">
+          <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+            <span>Students</span>
+          </ng-template>
+          <ng-template let-value="value" ngx-datatable-cell-template>
+            <strong>{{value}}</strong>
+          </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
+</div>

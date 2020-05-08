@@ -1,0 +1,15 @@
+<div class="page main-apge">
+    <div class="container">
+      <span class="text-primary ">
+        <h1 style="margin-top: 10%;"><strong>Google Classroom API Test</strong></h1>
+      </span>
+      <h3 style="margin-top: 10%;">Click on below button</h3>
+      <form id="login-form" method="GET" #loginForm="ngForm" (ngSubmit)="login()">
+        <input id="login" type="submit" value="Login" class="btn btn-primary">
+      </form>
+      <div class="form-outer text-center  align-items-center justify-content-center">
+        <div class="progress-materializecss" *ngIf="loading">
+        </div>
+      </div>
+    </div>
+  </div>

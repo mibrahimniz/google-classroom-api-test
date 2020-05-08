@@ -1,0 +1,43 @@
+<div>
+    <h1 style="margin-top: 3%; text-align: center;"><strong> Courses in the Classroom</strong></h1>
+    <ngx-datatable
+        class="material ngx-datatable fixed-header datatable-body-row striped"
+        style="margin-top: 3%;"
+        [rows]="coursesRows"
+        [columnMode]="'flex'"
+        [scrollbarV]="false"
+        [headerHeight]="50"
+        [footerHeight]="50"
+        [rowHeight]="'auto'"
+        [externalPaging]="true"
+        [count]="page.totalCourses"
+        [offset]="page.pageNumber"
+        [limit]="page.size"
+        [loadingIndicator]="isLoading"
+        (page)='setPage($event)'>
+        <ngx-datatable-column name="title" [flexGrow]="4">
+            <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+              <span>Title</span>
+            </ng-template>
+            <ng-template let-value="value" ngx-datatable-cell-template>
+              <strong><a (click)="getId(value)" [routerLink]="['/people']">{{value}}</a></strong>
+            </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="number of students" [flexGrow]="4">
+            <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+              <span>Number of Students</span>
+            </ng-template>
+            <ng-template let-value="value" ngx-datatable-cell-template>
+              <strong>{{value}}</strong>
+            </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="number of teachers" [flexGrow]="4">
+            <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+              <span>Number of Teachers</span>
+            </ng-template>
+            <ng-template let-value="value" ngx-datatable-cell-template>
+              <strong>{{value}}</strong>
+            </ng-template>
+        </ngx-datatable-column>
+    </ngx-datatable>
+</div>
